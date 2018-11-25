@@ -1,5 +1,6 @@
 import React from 'react';
 import Exercices4 from './Exercices4/Exercices4'
+import Exercices1 from './Exercices1/Exercices1';
 
 class App extends React.Component {
   render() {
@@ -7,6 +8,7 @@ class App extends React.Component {
       <div>
         <div>
           <h2>Zadanie 1</h2>
+          <Exercices1 />
           <hr/>
         </div>
         <div>

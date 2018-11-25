@@ -2,9 +2,18 @@ import React from 'react'
 import Button from './Button'
 
 class Exercices4 extends React.Component {
-    state = {
-        number: 0
+    state = JSON.parse(localStorage.getItem('numbers'))
+        ||
+        {
+            number: 0
+        }
+    componentDidUpdate() {
+        this.saveInToLocalStorage()
     }
+    saveInToLocalStorage = () => localStorage.setItem(
+        'numbers',
+        JSON.stringify(this.state)
+    )
     incHandler = () => (
         this.setState({ number: this.state.number + 1 })
     )
@@ -44,7 +53,7 @@ class Exercices4 extends React.Component {
                     label='Reset'
                     onClick={this.resetHandler}
                 />
-            </div>
+            </div >
         )
     }
 }
