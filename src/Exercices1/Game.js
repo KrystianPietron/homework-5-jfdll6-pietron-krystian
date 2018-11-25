@@ -1,6 +1,5 @@
 import React from 'react'
 import Board from './Board'
-import { CommunicationStayCurrentLandscape } from 'material-ui/svg-icons';
 
 class Game extends React.Component {
     constructor(props) {
@@ -22,9 +21,13 @@ class Game extends React.Component {
         squares[i] = this.state.xIsNext ? 'X' : "O"
         this.setState(
             {
-                history: history.concat([{
-                    squares: squares
-                }]),
+                history: history.concat(
+                    [
+                        {
+                            squares: squares
+                        }
+                    ]
+                ),
                 xIsNext: !this.state.xIsNext
             }
         )
@@ -52,14 +55,14 @@ class Game extends React.Component {
         const history = this.state.history
         const current = history[history.length - 1]
         const winner = this.calculateWinner(current.squares)
-        
-        const moves = history.map((step,move)=>{
+
+        const moves = history.map((step, move) => {
             const desc = move ?
-            'Go to move #' + move :
-            'Go to game start'
+                'Go to move #' + move :
+                'Go to game start'
             return (
-                <li>
-                    <button onClick={()=> this.jumpTo(move)}>{desc}</button>
+                <li key={move}>
+                    <button onClick={() => this.jumpTo(move)}>{desc}</button>
                 </li>
             )
         })
