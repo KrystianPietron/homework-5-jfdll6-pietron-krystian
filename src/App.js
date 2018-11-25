@@ -1,6 +1,9 @@
 import React from 'react';
-import Exercices4 from './Exercices4'
 import Exercices1 from './Exercices1'
+import Exercices2 from './Exercices2'
+import Exercices3 from './Exercices3'
+import Exercices4 from './Exercices4'
+
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 class App extends React.Component {
@@ -9,6 +12,7 @@ class App extends React.Component {
       <div>
         <Router>
           <div>
+            <h1>Homework nr. 5 JFDDL6 Pietroń Krystian</h1>
             <ul>
               <li>
                 <Link to='/'>Home</Link>
@@ -19,11 +23,11 @@ class App extends React.Component {
                 <hr />
               </li>
               <li>
-                <h2>Zadanie 2 : Linijki 24 i 25 wystarczy pousuwać nawiasy ().</h2>
+                <Link to='/exercices-2'>Zadanie 2</Link>
                 <hr />
               </li>
               <li>
-                <h2>Zadanie 3 :<a href='https://codesandbox.io/s/3kx8ljj4nm'> https://codesandbox.io/s/3kx8ljj4nm</a></h2>
+                <Link to='/exercices-3'>Zadanie 3</Link>
                 <hr />
               </li>
               <li>
@@ -32,6 +36,8 @@ class App extends React.Component {
               </li>
             </ul>
             <Route path='/exercices-1' component={Exercices1} />
+            <Route path='/exercices-2' component={Exercices2} />
+            <Route path='/exercices-3' component={Exercices3} />
             <Route path='/exercices-4' component={Exercices4} />
           </div>
         </Router>
