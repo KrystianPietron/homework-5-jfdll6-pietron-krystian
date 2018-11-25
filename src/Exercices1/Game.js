@@ -1,5 +1,6 @@
 import React from 'react'
 import Board from './Board'
+import Button from '../Elements/Button'
 
 class Game extends React.Component {
     constructor(props) {
@@ -13,7 +14,7 @@ class Game extends React.Component {
         }
     }
     handleClick(i) {
-        const history = this.state.history.slice(0, this.state.stepNumber+1)
+        const history = this.state.history.slice(0, this.state.stepNumber + 1)
         const current = history[history.length - 1]
         const squares = current.squares.slice()
         if (this.calculateWinner(squares) || squares[i]) {
@@ -66,13 +67,14 @@ class Game extends React.Component {
         const current = history[this.state.stepNumber]
         const winner = this.calculateWinner(current.squares)
 
-        const moves = history.map((step,move) => {
+        const moves = history.map((step, move) => {
             const desc = move ?
                 'Go to move #' + move :
                 'Go to game start'
             return (
                 <li key={move}>
-                    <button onClick={() => this.jumpTo(move)}>{desc}</button>
+                    <Button onClick={() => this.jumpTo(move)}
+                        label={desc}></Button>
                 </li>
             )
         })
@@ -87,7 +89,7 @@ class Game extends React.Component {
                 <div className="game-board">
                     <Board
                         squares={current.squares}
-                        onClick={(i)=> this.handleClick(i)}
+                        onClick={(i) => this.handleClick(i)}
                     />
                 </div>
                 <div className="game-info">

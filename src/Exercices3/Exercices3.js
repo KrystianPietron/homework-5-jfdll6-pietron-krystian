@@ -6,7 +6,7 @@ const Exercices3 = () => (
             <h1>Rozwiązanie.</h1>
         </div>
         <div>
-        <h2><a href='https://codesandbox.io/s/3kx8ljj4nm'> https://codesandbox.io/s/3kx8ljj4nm</a></h2>
+            <h2><a href='https://codesandbox.io/s/3kx8ljj4nm'> https://codesandbox.io/s/3kx8ljj4nm</a></h2>
         </div>
     </div>
 )
