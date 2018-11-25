@@ -1,11 +1,11 @@
 import React from 'react'
-
+import Game from './Game'
 
 class Exercices1 extends React.Component {
     render() {
         return (
             <div>
-                Exercices1
+                <Game />
             </div>
         )
     }
